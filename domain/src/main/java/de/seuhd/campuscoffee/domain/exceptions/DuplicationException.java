@@ -1,6 +1,7 @@
 package de.seuhd.campuscoffee.domain.exceptions;
 
 import de.seuhd.campuscoffee.domain.model.objects.DomainModel;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Generic exception thrown when attempting to create or update an entity with a value that already exists.
@@ -19,4 +20,5 @@ public class DuplicationException extends RuntimeException {
     public <DOMAIN extends DomainModel<?>> DuplicationException(Class<DOMAIN> domainClass, String fieldName, String fieldValue) {
         super(domainClass.getSimpleName() + " with " + fieldName + " '" + fieldValue + "' already exists.");
     }
+
 }
